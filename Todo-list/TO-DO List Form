@@ -1,0 +1,183 @@
+import React from 'react';
+import { Pagination, Button } from 'reactstrap';
+
+
+
+
+class TodoPage extends React.Component {
+
+    state = {
+       todos:[],
+       filteredTodos: [],
+       searchText: '',
+       todoTableState: {
+
+       },
+       pageSize:10,
+       current:'1'
+    }
+    
+    onSearch = (searchText) => {
+      // Todo: Implement Search
+    }
+
+
+    onTodoTableChange = (state) => {
+        const {filters, sorters} = state;
+        // filters: [{field:'', value:'abc'}]
+        // sorters: [{filed: '', direction:'' acs | desc}]
+
+        // Filter and Sort
+
+        this.setState( {
+            todoTableState: state,
+            filteredTodos: []// new
+        })
+
+    }
+
+    onPageChange = (page) => {
+
+    }
+
+    getTotalPages = () => {
+
+    }
+
+    onDelete = (id) => {
+
+    }
+
+    onUpdate = (todo) => {
+
+    }
+
+    onCreate = (todo) => {
+
+    }
+
+    render() {
+        const {searchText, filteredTodos, todoTableState, current} = this.state;
+        return (
+         <div>
+            <CreateTaskButon task={{}} onCreate={this.onCreate} /> 
+            <Search value={searchText} onSearch={this.onSearch} />
+            <TodoTable 
+                data={filteredTodos} 
+                state={todoTableState} 
+                onChange={this.TodoTableChange}
+                onDelete={this.onDelete}
+                onUpdate={this.onUpdate}
+            />
+            <Pagination pages={this.getTotalPages()} current={current} onChange={this.onPageChange}/>
+         </div>        
+
+        )    
+    }
+
+}
+
+
+
+class TaskEditableModal extends React.Component () {
+
+    render() {
+      const {task, visible = false, editable = false, isCreated = false, onChange} = this.props;
+
+      return (
+         <div></div>
+      )
+    }
+}
+
+
+class CreateTaskButon extends React.Component () {
+
+    state = {
+        taskEditableModalVisible: false
+    }
+
+    toggle = () =>  {
+       
+    }
+
+    onCreate = (task) => {
+      this.setState({taskEditableModalVisible: false}, () => {
+          this.props.onCreate(task);
+      })  
+    }
+
+    render() {
+      const {task, onCreate} = this.props;
+      const { taskEditableModalVisible } = this.state;
+
+      return (
+        <div> 
+           <Button onClick={this.toggle}/>
+           <TaskEditableModal taskEditableModalVisible={taskEditableModalVisible} isCreated task={{}} onChange={onCreate}/>   
+        </div>
+      )
+    }
+}
+
+
+class TodoTable extends React.Component {
+
+    columns = [
+       {
+         title:'Name',   
+         key: 'name',
+       },
+       {
+        title:'Age',   
+        key: 'age',
+        render: (value) => {
+            return value;    
+        }
+       },
+        {
+            render: (value, r) => {
+                return <div>
+                    
+                </div>;    
+        }
+      }
+    ]
+
+    render() {
+        const {data} = this.props;
+        return (
+            <Table  data={data} columns={this.columns}/>
+        )
+    }
+}
+
+class Table extends React.Component {
+   render() {
+       const {columns, data} = this.props;
+       return (
+           <table>
+              <thead>
+                  <tr>
+                    {columns.map(column => column.title || '')}
+                  </tr>
+              </thead>
+              <tbody>
+                {data.map(item => ()=> (
+                    <tr>
+                        {column.map(column => <td>{(column.render | v => v)(item[column.key, item)]</td>)}
+                   </tr>     
+                )}
+              </tbody
+            </table>
+       )
+   }
+}
+
+
+export default TodoPage;
+
+
+
+
+

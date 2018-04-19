@@ -1,0 +1,17 @@
+.App {
+    text-align: center;
+    margin:auto;
+  }
+  
+
+  div{
+    margin-bottom:30px;
+  }
+  
+  Input{
+    margin:10px;
+  }
+  
+  Button{
+    margin:10px;
+  }

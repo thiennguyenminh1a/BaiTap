@@ -1,0 +1,13 @@
+.add{
+    flex: wrap;
+    justify-content:center;
+    margin: 20px 0px
+}
+.search{
+    width:400px !important;
+    height:40px;
+    margin: 20px 90px
+}
+.Menu{
+    margin-bottom: 30px;
+}

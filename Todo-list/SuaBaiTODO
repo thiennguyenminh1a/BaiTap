@@ -1,0 +1,17 @@
+Sửa lại cách đặt tên rõ ràng theo css.
+Sửa lại function trong app.js chỉ quản lý data không quản lý những chức năng khác( vd: modal xuất hiện)
+Sửa lại truyền toàn bộ state vào các component con.
+Sửa lại tách các component con ra sao có thể tái sử dụng được(VD: table tách ra 1 component con chỉ cần truyền data vào là có thể xuất dữ liệu được, tương tự pagniation)
+
+
+Cần truyền các function vào trong component của nó:
+
++ HandlerOrder
++ updateSearch
++ toggle
++ handleClick
+
+
+
+
+

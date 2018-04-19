@@ -1,0 +1,33 @@
+.page-number{
+    margin:0 auto;
+    display: flex;
+    
+    position: relative;
+
+    left:70%;
+}
+
+th:not(:last-child){
+    cursor: pointer;
+}
+
+.up,.down{
+    color: black;
+}
+
+.up:before{
+  position: absolute;
+  margin-left: -20px;
+  content: " ▲ " ;
+}
+
+.down:before{
+    position: absolute;
+    margin-left: -20px;
+    content: " ▼ " ;
+}
+
+
+.default{
+    color:gray;
+}

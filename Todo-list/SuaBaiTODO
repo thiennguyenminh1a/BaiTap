@@ -7,8 +7,6 @@ Sửa lại tách các component con ra sao có thể tái sử dụng được(
 Cần truyền các function vào trong component của nó:
 
 + HandlerOrder
-+ updateSearch
-+ toggle
 + handleClick
 
 
